@@ -1,0 +1,104 @@
+.button-container {
+    display: flex;
+    gap: 10px; /* Отступ между кнопками */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.format-container {
+    display: flex;
+    align-items: center; /* Выравнивание кнопки по вертикали с полем ввода */
+    margin-top: 20px; /* Отступ сверху от поля ввода JSON */
+}
+
+.error-message {
+    margin-top: 10px;
+    color: red;
+}
+
+.text-field {
+    position: relative;
+    margin-bottom: 20px; /* Отступ снизу для поля ввода */
+}
+
+.format-button, .save-button {
+    margin-left: 10px; /* Отступ слева */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.input-container {
+    margin-bottom: 20px; /* Отступ снизу для полей ввода */
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.format-container {
+    margin-top: 20px;
+}
+
+.format-button,
+.save-button,
+.preview-button {
+    margin-right: 10px;
+}
+
+/* Стили для модального окна */
+.modal-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 800px;
+    max-height: 80vh;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative; /* Убедитесь, что модальное окно имеет относительное позиционирование */
+}
+
+/* Стили для кнопки Копировать */
+.copy-button-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10; /* Убедитесь, что кнопка находится поверх других элементов */
+}
+
+/* Стили для JSON-превью */
+.json-preview {
+    white-space: pre-wrap; /* Сохраняет форматирование JSON */
+    overflow-y: auto; /* Включает вертикальную прокрутку, если нужно */
+    max-height: calc(80vh - 60px); /* Устанавливаем максимальную высоту для контента */
+}
+
+
+.copy-success {
+    margin-top: 20px;
+    color: #4caf50; /* Зеленый цвет для успешного уведомления */
+}
+
+/* Стили для Snackbar */
+.MuiSnackbar-root {
+    margin: 10px;
+}
+
+/* Стили для заголовка */
+.header-container {
+    background-color: #ffeb3b; /* Желтый фон */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color: #000; /* Черный текст */
+}
+
+.header-text {
+    margin: 0;
+    font-weight: bold; /* Полужирный шрифт для заголовка */
+}
