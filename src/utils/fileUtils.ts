@@ -10,24 +10,25 @@ export const validateAndFixJson = (jsonString: string): [boolean, string | null]
 };
 
 // Функция для обновления значения по ключу в объекте
-export const updateJsonValue = (jsonObject: any, key: string, newValue: any): any => {
-    const keys = key.split('.');
-    let updatedObject = { ...jsonObject };
+export const updateJsonValue = (obj: Record<string, any>, path: string, value: any): Record<string, any> => {
+    // Выполняем глубокое клонирование объекта внутри функции
+    const clonedObj = JSON.parse(JSON.stringify(obj));
 
-    // Рекурсивная функция для обновления значения по ключу
-    const updateValue = (obj: any, keys: string[], value: any) => {
-        if (keys.length === 1) {
-            obj[keys[0]] = value;
-        } else {
-            const currentKey = keys.shift()!;
-            if (obj[currentKey] && typeof obj[currentKey] === 'object') {
-                updateValue(obj[currentKey], keys, value);
-            }
+    const keys = path.split('.');
+    let current = clonedObj;
+
+    for (let i = 0; i < keys.length - 1; i++) {
+        const key = keys[i];
+        if (current[key] === undefined || current[key] === null) {
+            current[key] = {};
         }
-    };
+        current = current[key];
+    }
 
-    updateValue(updatedObject, keys, newValue);
-    return updatedObject;
+    const lastKey = keys[keys.length - 1];
+    current[lastKey] = value;
+
+    return clonedObj;
 };
 
 // Генерация UUID
