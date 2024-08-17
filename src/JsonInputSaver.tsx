@@ -309,7 +309,7 @@ const JsonInputSaver: React.FC = () => {
                 <Button
                     onClick={handleFormatJson}
                     variant="contained"
-                    color="primary"
+                    color="secondary"
                     className="format-button"
                 >
                     Форматировать JSON
@@ -365,7 +365,7 @@ const JsonInputSaver: React.FC = () => {
                 <Button
                     onClick={handleSaveCombined}
                     variant="contained"
-                    color="secondary"
+                    color="primary"
                     className="save-button"
                 >
                     Сохранить все JSON одним файлом
