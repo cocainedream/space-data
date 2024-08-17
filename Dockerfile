@@ -15,10 +15,10 @@ COPY . .
 RUN npm run build
 
 # Устанавливаем переменную окружения для порта
-ENV PORT=7000
+ENV PORT=3000
 
 # Открываем порт
-EXPOSE 7000
+EXPOSE 3000
 
 # Запускаем сервер
 CMD ["npx", "serve", "-s", "build"]
